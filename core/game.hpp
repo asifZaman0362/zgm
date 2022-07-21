@@ -41,7 +41,7 @@ namespace zifmann::zgame::core {
         public:
             Game(const Config&);
             
-            void Start();
+            void Start(std::unique_ptr<Scene>);
             void Update(float);
             void ProcessEvent(const sf::Event&);
             void Render();

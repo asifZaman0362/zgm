@@ -1,5 +1,6 @@
 #include "game.hpp"
 #include "input.hpp"
+#include "logger.hpp"
 
 namespace zifmann::zgame::core {
 
@@ -11,7 +12,7 @@ namespace zifmann::zgame::core {
     
     Game::Game(const Config& config) : m_windowConfig(config) {}
     
-    void Game::Start() {
+    void Game::Start(std::unique_ptr<Scene> startScene) {
         m_window.create(
             sf::VideoMode(
                 m_windowConfig.width,
@@ -27,6 +28,8 @@ namespace zifmann::zgame::core {
         m_isRunning = true;
         m_sceneManager.Init();
         m_gameState = GameState::Playing;
+        m_sceneManager.LoadScene(std::move(startScene));
+        m_sceneManager.StartScene();
         m_clock.restart();
         while (m_isRunning) {
             sf::Event e{};

@@ -10,7 +10,7 @@ namespace zifmann::zgame::core {
             std::list<sf::Drawable*> m_drawables;
             bool                    m_isPlaying;
         public:
-            Scene();
+            Scene() = default;
             virtual ~Scene();
             
             virtual void OnUpdate(float);

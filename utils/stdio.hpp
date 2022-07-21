@@ -6,12 +6,15 @@
 
 namespace zifmann::zgame::utils {
     namespace stdio {
-        #define println(a, b)  _print<a>(b, '\n')
-        #define print(a, b)    _print<a>(b)
 
         template<typename T>
-        void _print(T item, char newline = '\0') {
-            std::cout << item << newline;
+        void println(T item) {
+            std::cout << item << '\n';
+        }
+
+        template<typename T>
+        void print(T item) {
+            std::cout << item;
         } 
 
         template<typename T>

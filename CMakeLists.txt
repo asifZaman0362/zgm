@@ -5,8 +5,8 @@ project(zgame)
 include_directories(utils)
 include_directories(core)
 
-set(SOURCES core/game.cpp core/scenemanager.cpp core/input.cpp core/scene.cpp)
-set(HEADERS core/scenemanager.hpp core/scene.hpp core/input.hpp core/game.hpp utils/format.hpp utils/stdio.hpp)
+set(SOURCES core/game.cpp core/scenemanager.cpp core/input.cpp core/assetmanager.cpp core/scene.cpp utils/logger.cpp)
+set(HEADERS core/scenemanager.hpp core/scene.hpp core/input.hpp core/game.hpp utils/format.hpp utils/stdio.hpp utils/logger.hpp core/assetmanager.hpp)
 set(SANDBOX_HEADERS )
 set(SANDBOX_SOURCES sandbox/source.cpp sandbox/testscene.hpp)
 

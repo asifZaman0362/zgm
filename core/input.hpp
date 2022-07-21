@@ -10,8 +10,8 @@ namespace zifmann::zgame::core {
 
         class KeyListener {
             public:
-                virtual void OnKeyPress()   = 0;
-                virtual void OnKeyRelease() = 0;
+                virtual void OnKeyPress(sf::Keyboard::Key)   = 0;
+                virtual void OnKeyRelease(sf::Keyboard::Key) = 0;
         };
 
         class MouseListener {

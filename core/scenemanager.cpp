@@ -7,7 +7,7 @@ namespace zifmann::zgame::core {
     }
 
     void SceneManager::LoadScene(std::unique_ptr<Scene> scene, bool preserveLast) {
-        if (!preserveLast) {
+        if (!preserveLast && !m_scenes.empty()) {
             m_scenes.top()->OnDestroy();
             m_scenes.pop();
         }

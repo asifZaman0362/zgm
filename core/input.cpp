@@ -17,12 +17,12 @@ namespace zifmann::zgame::core::Input {
 
         void ProcessKeyPressEvent(sf::Keyboard::Key key) {
             for (auto& listener : m_keyListeners[key]) 
-                listener->OnKeyPress();
+                listener->OnKeyPress(key);
         }
 
         void ProcessKeyReleaseEvent(sf::Keyboard::Key key) {
             for (auto& listener : m_keyListeners[key])
-                listener->OnKeyRelease();
+                listener->OnKeyRelease(key);
         }
 
         void ProcessMouseMove(int x, int y) {
