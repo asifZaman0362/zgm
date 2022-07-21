@@ -11,6 +11,8 @@ namespace zifmann::zgame::core {
             std::stack<std::unique_ptr<Scene>> m_scenes;
             bool m_isPlaying;
         public:
+            SceneManager() = default;
+            ~SceneManager() = default;
             void Init();
             /// @brief
             /// Loads a new scene into the scene stack and starts playing it
@@ -19,12 +21,13 @@ namespace zifmann::zgame::core {
             /// save the state (and resources) of the last active scene in memory
             void LoadScene(std::unique_ptr<Scene> scene, bool preserveLast = false);
             void StartScene();
-            std::unique_ptr<Scene> PopScene();
+            void PopScene();
             void Render(const sf::RenderTarget&);
             void Update(float);
             void ProcessEvent(const sf::Event&);
             void PauseScene();
             void ResumeScene();
+            void Stop();
     };
 }
 

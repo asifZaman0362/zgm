@@ -2,6 +2,7 @@
 #define ZGAME_CORE_GAME_H
 
 #include <SFML/Graphics.hpp>
+#include "scenemanager.hpp"
 
 namespace zifmann::zgame::core {
     
@@ -30,16 +31,19 @@ namespace zifmann::zgame::core {
         private:
             sf::RenderWindow    m_window;
             sf::Clock           m_clock;
+            SceneManager        m_sceneManager;
             GameState           m_gameState;
             Config              m_windowConfig;
             bool                m_isRunning;
         
         public:
             Game(const Config&);
-
+            
+            void Start();
             void Update(float);
             void ProcessEvent(const sf::Event&);
             void Render();
+            void Stop();
     };
 }
 
