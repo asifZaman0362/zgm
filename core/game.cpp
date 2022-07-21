@@ -2,6 +2,12 @@
 #include "input.hpp"
 
 namespace zifmann::zgame::core {
+
+    Game::Config Game::Config::Default() {
+        return Config {
+            800, 480, 32, 60, sf::Style::Default, false, "Sandbox"
+        };
+    }
     
     Game::Game(const Config& config) : m_windowConfig(config) {}
     

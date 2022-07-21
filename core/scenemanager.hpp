@@ -22,7 +22,7 @@ namespace zifmann::zgame::core {
             void LoadScene(std::unique_ptr<Scene> scene, bool preserveLast = false);
             void StartScene();
             void PopScene();
-            void Render(const sf::RenderTarget&);
+            void Render(sf::RenderTarget&);
             void Update(float);
             void ProcessEvent(const sf::Event&);
             void PauseScene();

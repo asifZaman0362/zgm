@@ -16,6 +16,7 @@ namespace zifmann::zgame::core {
     }
 
     void SceneManager::StartScene() {
+        if (m_scenes.empty()) return;
         m_scenes.top()->OnStart();
     }
 
@@ -23,29 +24,36 @@ namespace zifmann::zgame::core {
         m_scenes.pop();
     }
 
-    void SceneManager::Render(const sf::RenderTarget& window) {
+    void SceneManager::Render(sf::RenderTarget& window) {
+        if (m_scenes.empty()) return;
         m_scenes.top()->OnRender(window);
     }
 
     void SceneManager::Update(float dt) {
+        if (m_scenes.empty()) return;
         m_scenes.top()->OnUpdate(dt);
     }
 
     void SceneManager::ProcessEvent(const sf::Event& e) {
+        if (m_scenes.empty()) return;
         m_scenes.top()->OnEvent(e);
     }
 
     void SceneManager::PauseScene() {
+        if (m_scenes.empty()) return;
         m_isPlaying = false;
         m_scenes.top()->OnPause();
     }
 
-    void SceneManager::ResumeScene() {
+    void SceneManager::ResumeScene() 
+    {
+        if (m_scenes.empty()) return;
         m_scenes.top()->OnResume();
         m_isPlaying = true;
     }
 
     void SceneManager::Stop() {
+        if (m_scenes.empty()) return;
         while (m_scenes.size()) {
             m_scenes.top()->OnDestroy();
             m_scenes.pop();

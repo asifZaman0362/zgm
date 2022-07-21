@@ -26,6 +26,8 @@ namespace zifmann::zgame::core {
                 uint        window_flags;
                 bool        vsync;
                 sf::String  window_title;
+
+                static Config Default();
             };
         
         private:
