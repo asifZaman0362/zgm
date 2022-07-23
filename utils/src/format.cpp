@@ -1,6 +1,3 @@
-#ifndef ZGAME_UTILS_FORMAT_H
-#define ZGAME_UTILS_FORMAT_H
-
 #include <string>
 #include <cstdarg>
 #include <vector>
@@ -54,4 +51,3 @@ namespace zifmann::zgame::utils {
     }
 }
 
-#endif

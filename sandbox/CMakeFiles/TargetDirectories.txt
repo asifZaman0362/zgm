@@ -1,0 +1,14 @@
+/home/zero/projects/zgame/sandbox/CMakeFiles/edit_cache.dir
+/home/zero/projects/zgame/sandbox/CMakeFiles/rebuild_cache.dir
+/home/zero/projects/zgame/sandbox/utils/CMakeFiles/utils.dir
+/home/zero/projects/zgame/sandbox/utils/CMakeFiles/edit_cache.dir
+/home/zero/projects/zgame/sandbox/utils/CMakeFiles/rebuild_cache.dir
+/home/zero/projects/zgame/sandbox/utils/logger/CMakeFiles/logger.dir
+/home/zero/projects/zgame/sandbox/utils/logger/CMakeFiles/edit_cache.dir
+/home/zero/projects/zgame/sandbox/utils/logger/CMakeFiles/rebuild_cache.dir
+/home/zero/projects/zgame/sandbox/core/CMakeFiles/core.dir
+/home/zero/projects/zgame/sandbox/core/CMakeFiles/edit_cache.dir
+/home/zero/projects/zgame/sandbox/core/CMakeFiles/rebuild_cache.dir
+/home/zero/projects/zgame/sandbox/sandbox/CMakeFiles/zgame-sandbox.dir
+/home/zero/projects/zgame/sandbox/sandbox/CMakeFiles/edit_cache.dir
+/home/zero/projects/zgame/sandbox/sandbox/CMakeFiles/rebuild_cache.dir

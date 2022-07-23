@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/zgame-sandbox.dir/source.cpp.o" -o zgame-sandbox  -lzgame 

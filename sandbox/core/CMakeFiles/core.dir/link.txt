@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore.a CMakeFiles/core.dir/src/scenemanager.cpp.o CMakeFiles/core.dir/src/scene.cpp.o CMakeFiles/core.dir/src/input.cpp.o CMakeFiles/core.dir/src/game.cpp.o CMakeFiles/core.dir/src/assetmanager.cpp.o
+/usr/bin/ranlib libcore.a

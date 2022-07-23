@@ -1,7 +1,7 @@
-#include "../core/game.hpp"
-#include "../core/input.hpp"
-#include "../utils/stdio.hpp"
-#include "../utils/format.hpp"
+#include "game.hpp"
+#include "input.hpp"
+#include "stdio.hpp"
+#include "format.hpp"
 #include "testscene.hpp"
 
 int main() {

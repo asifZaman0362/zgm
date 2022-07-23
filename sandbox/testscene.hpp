@@ -1,6 +1,6 @@
-#include "../core/scene.hpp"
-#include "../core/input.hpp"
-#include "../utils/logger.hpp"
+#include "../core/include/scene.hpp"
+#include "../core/include/input.hpp"
+#include "../utils/logger/include/logger.hpp"
 
 namespace zifmann::zgame::sandbox {
     class TestScene : public zifmann::zgame::core::Scene, public zifmann::zgame::core::Input::KeyListener {

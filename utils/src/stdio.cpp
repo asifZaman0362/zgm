@@ -1,7 +1,3 @@
-#ifndef ZGAME_UTILS_STDIO_H
-#define ZGAME_UTILS_STDIO_H
-
-//#include "format.hpp"
 #include <iostream>
 
 namespace zifmann::zgame::utils {
@@ -27,4 +23,3 @@ namespace zifmann::zgame::utils {
     }
 }
 
-#endif
