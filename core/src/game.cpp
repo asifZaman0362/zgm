@@ -1,8 +1,11 @@
 #include "game.hpp"
 #include "input.hpp"
 #include "logger.hpp"
+#include "assetmanager.hpp"
 
 namespace zifmann::zgame::core {
+
+    std::unique_ptr<Game> Game::m_instance;
 
     Game::Config Game::Config::Default() {
         return Config {
@@ -12,6 +15,17 @@ namespace zifmann::zgame::core {
     
     Game::Game(const Config& config) : m_windowConfig(config) {}
     
+    void Game::Init(const Config& config) {
+        if (!m_instance) m_instance = std::make_unique<Game>(config);
+    }
+
+    Game *Game::GetInstance() {
+        if (!m_instance) {
+            log_error("Trying to get game instance without initializing first! Try calling Game::Init(const Config&) before accessing an instance.");
+            exit(-1);
+        } else return m_instance.get();
+    }
+
     void Game::Start(std::unique_ptr<Scene> startScene) {
         m_window.create(
             sf::VideoMode(
@@ -26,10 +40,10 @@ namespace zifmann::zgame::core {
         else
             m_window.setFramerateLimit(m_windowConfig.fps_cap);
         m_isRunning = true;
-        m_sceneManager.Init();
+        SceneManager::Init();
         m_gameState = GameState::Playing;
-        m_sceneManager.LoadScene(std::move(startScene));
-        m_sceneManager.StartScene();
+        SceneManager::GetInstance()->LoadScene(std::move(startScene));
+        SceneManager::GetInstance()->StartScene();
         m_clock.restart();
         while (m_isRunning) {
             sf::Event e{};
@@ -41,12 +55,13 @@ namespace zifmann::zgame::core {
             Update(dt);
             Render();
         }
-        m_sceneManager.Stop();
+        SceneManager::GetInstance()->Stop();
+        AssetManager::ClearResources();
         m_window.close();
     }
 
     void Game::Update(float dt) {
-        m_sceneManager.Update(dt);
+        SceneManager::GetInstance()->Update(dt);
     }
 
     void Game::ProcessEvent(const sf::Event& event) {
@@ -64,8 +79,8 @@ namespace zifmann::zgame::core {
     }
 
     void Game::Render() {
-        m_window.clear(sf::Color::Blue);
-        m_sceneManager.Render(m_window);
+        m_window.clear(sf::Color::Black);
+        SceneManager::GetInstance()->Render(m_window);
         m_window.display();
     }
 

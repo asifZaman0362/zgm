@@ -10,10 +10,13 @@ namespace zifmann::zgame::core {
         private:
             std::stack<std::unique_ptr<Scene>> m_scenes;
             bool m_isPlaying;
+            static std::unique_ptr<SceneManager> m_instance;
         public:
             SceneManager() = default;
             ~SceneManager() = default;
-            void Init();
+
+            static SceneManager *GetInstance();
+            static void Init();
             /// @brief
             /// Loads a new scene into the scene stack and starts playing it
             /// @param scene: UniquePtr to the scene to load

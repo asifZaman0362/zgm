@@ -1,7 +1,14 @@
 #include "scenemanager.hpp"
 
 namespace zifmann::zgame::core {
-    
+
+    std::unique_ptr<SceneManager> SceneManager::m_instance;
+
+    SceneManager *SceneManager::GetInstance() {
+        if (!m_instance) m_instance = std::make_unique<SceneManager>();
+        return m_instance.get();
+    }
+
     void SceneManager::Init() {
         // do stuff
     }

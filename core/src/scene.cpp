@@ -17,7 +17,6 @@ namespace zifmann::zgame::core {
     void Scene::OnLoad() {}
 
     void Scene::OnDestroy() {
-        for (auto& item : m_drawables) delete item;
         m_drawables.clear();
     }
 

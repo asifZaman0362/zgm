@@ -8,6 +8,8 @@ set(SOURCES
     src/input.cpp 
     src/game.cpp 
     src/assetmanager.cpp
+    src/systems/animation.cpp
+    src/systems/collision.cpp
 )
 
 set(HEADERS
@@ -16,6 +18,8 @@ set(HEADERS
     include/input.hpp
     include/scene.hpp
     include/scenemanager.hpp
+    include/systems/animation.hpp
+    include/systems/collision.hpp
 )
 
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})

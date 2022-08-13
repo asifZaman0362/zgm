@@ -11,6 +11,7 @@ namespace zifmann::zgame::core {
     typedef unsigned int    uint;
     typedef bool            byte;
 
+    // TODO: convert game class to either a namespace or a singleton
     class Game {
         
         public:
@@ -33,14 +34,15 @@ namespace zifmann::zgame::core {
         private:
             sf::RenderWindow    m_window;
             sf::Clock           m_clock;
-            SceneManager        m_sceneManager;
             GameState           m_gameState;
             Config              m_windowConfig;
             bool                m_isRunning;
+            static std::unique_ptr<Game> m_instance;
         
         public:
             Game(const Config&);
-            
+            static Game* GetInstance();
+            static void Init(const Config&);
             void Start(std::unique_ptr<Scene>);
             void Update(float);
             void ProcessEvent(const sf::Event&);
