@@ -10,6 +10,7 @@ set(SOURCES
     src/assetmanager.cpp
     src/systems/animation.cpp
     src/systems/collision.cpp
+    src/systems/ecs.cpp
 )
 
 set(HEADERS
@@ -20,6 +21,7 @@ set(HEADERS
     include/scenemanager.hpp
     include/systems/animation.hpp
     include/systems/collision.hpp
+    include/systems/ecs.hpp
 )
 
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
