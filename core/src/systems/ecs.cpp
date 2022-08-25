@@ -1,4 +1,5 @@
 #include "systems/ecs.hpp"
+#include "logger.hpp"
 
 /*
     ____________________________________________________________
@@ -86,18 +87,18 @@ namespace zifmann::zgame::core::systems {
             return 0;
         }
 
-        void AddComponent(const Entity e, const Component* comp) {
-            if (!table.contains(Entity)) log_error("Entity out of bounds!");
+        void AddComponent(const Entity e, Component* comp) {
+            if (!table.contains(e)) log_error("Entity out of bounds!");
             table[e].push_back(comp);
             return;
         }
 
-        template<typename T> Component const* GetComponent(const Entity) {
-            if (!table.conatins(e)) {
+        template<typename T> Component const* GetComponent(const Entity e) {
+            if (!table.contains(e)) {
                 log_error("Entity out of bounds!");
                 return nullptr;
             }
-            for (auto& comp : table[e]) {
+            for (auto& comp : table[e]) 
                 if (comp->GetComponentId() == T::GetComponentId())
                     return comp;
             return nullptr;

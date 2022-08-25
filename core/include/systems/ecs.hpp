@@ -19,8 +19,8 @@ namespace zifmann::zgame::core::systems {
         static EcTable table;
         
         size_t RegisterEntity();
-        void AddComponent(const Entity, const Component*);
-        template<typename T> Component const* GetComponent(const Entity);
+        void AddComponent(const Entity, Component*);
+        template<typename T> Component* GetComponent(const Entity);
     
     }
 
